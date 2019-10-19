@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage('git clone') {
+        sh '''
+            git clone https://github.com/nippyk9/t1-student-maven-proj.git
+            echo "This is my script"
+        '''
+        stage('testing'){
+        sh '''
+              mvn install
+        '''
+        }
+    }
+    }
+}
